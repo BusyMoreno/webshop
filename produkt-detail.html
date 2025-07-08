@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Produkt Detail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Toy World</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="produkte.html">Produkte</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="produkt-detail">
+        <h2 id="produkt-name"></h2>
+        <img id="produkt-bild" src="" alt="" style="max-width: 300px" />
+        <p id="produkt-beschreibung"></p>
+        <p><strong id="produkt-preis"></strong></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Toy World</p>
+    </footer>
+
+    <script>
+      const products = {
+        baukasten: {
+          name: "Kinder-Baukasten",
+          img: "https://www.bea.swiss/images/product/medium/3976.jpg",
+          alt: "Kinder-Baukasten",
+          beschreibung:
+            "Vielseitiger Baukasten mit bunten Bausteinen, ideal zum kreativen Spielen und Lernen.",
+          preis: "CHF 89.00",
+        },
+        "electric-lamborghini": {
+          name: "Electric Car for Kids",
+          img: "https://cdn02.plentymarkets.com/mrt54q44tptl/item/images/23381/secondPreview/Elektroauto-Kinder-Lamborghini-Autentica-rot-1.jpg",
+          alt: "Electric Lamborghini",
+          beschreibung:
+            "Cooles Elektroauto im Lamborghini-Design, perfekt für kleine Rennfahrer mit realistischen Soundeffekten.",
+          preis: "CHF 199.00",
+        },
+        "playmobil-castle": {
+          name: "Playmobil Castle",
+          img: "https://i.ebayimg.com/images/g/0BQAAOSwW0Bf60wV/s-l1200.png",
+          alt: "Playmobil Castle",
+          beschreibung:
+            "Großes Playmobil Schloss mit detailreichen Figuren und vielen spannenden Spielmöglichkeiten.",
+          preis: "CHF 119.00",
+        },
+        "hot-wheels-mega-garage": {
+          name: "Hot Wheels Mega Garage",
+          img: "https://hydraulic-cdn.com/productimages/1/8/8/6/5/8/0/8/1/3/1/6/8/0/3/7/3/2/0/1559156f-9d47-48ce-8b6a-c0d1f200bdb4.jpg_1440.avif",
+          alt: "Hot Wheels Mega Garage",
+          beschreibung:
+            "Riesige Parkgarage für Hot Wheels-Autos mit Aufzug und Looping.",
+          preis: "CHF 69.00",
+        },
+        "ravensburger-puzzle": {
+          name: "Ravensburger Puzzle 1000 Teile – Weltkarte",
+          img: "https://exlibris.azureedge.net/covers/4005/5550/0065/5/4005555000655xxl.webp",
+          alt: "Ravensburger Puzzle 1000 Teile – Weltkarte",
+          beschreibung:
+            "Großes Puzzle für Kinder und Erwachsene mit einer detailreichen Weltkarte.",
+          preis: "CHF 29.00",
+        },
+        "fisher-price-hund": {
+          name: "Fisher-Price Lernspaß Hündchen",
+          img: "https://m.media-amazon.com/images/I/61+0t2Qx1nL._AC_SX679_.jpg",
+          alt: "Fisher-Price Lernspaß Hündchen",
+          beschreibung:
+            "Interaktives Stofftier mit über 50 Liedern, Geräuschen und Sätzen.",
+          preis: "CHF 45.00",
+        },
+        "playmobil-piratenschiff": {
+          name: "Playmobil Piratenschiff",
+          img: "https://i8.amplience.net/i/manor/10002546155_01?fmt=auto&h=920&w=920",
+          alt: "Playmobil Piratenschiff",
+          beschreibung:
+            "Schwimmfähiges Piratenschiff mit Kanonen, Schatztruhe und Crew.",
+          preis: "CHF 89.00",
+        },
+        "nerf-elite-2": {
+          name: "NERF Elite 2.0 Blaster",
+          img: "https://i8.amplience.net/i/manor/10001209303_01?fmt=auto&h=920&w=920",
+          alt: "NERF Elite 2.0 Blaster",
+          beschreibung:
+            "Cooler Spielzeug-Blaster mit 12-Dart-Magazin und Zielvisier.",
+          preis: "CHF 49.00",
+        },
+        "lego-riesenrad": {
+          name: "LEGO Creator 3-in-1 Riesenrad",
+          img: "https://spielmix.ch/cdn/shop/files/31119_alt2_c46a0238-5b4c-4b4d-92b6-0be652cccf70.jpg?v=1750749121&width=800",
+          alt: "LEGO Creator 3-in-1 Riesenrad",
+          beschreibung:
+            "Bauset für ein drehbares Riesenrad, eine Achterbahn oder ein Karussell.",
+          preis: "CHF 119.00",
+        },
+      };
+
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      const productKey = getQueryParam("product");
+      const product = products[productKey];
+
+      if (product) {
+        document.getElementById("produkt-name").textContent = product.name;
+        const imgEl = document.getElementById("produkt-bild");
+        imgEl.src = product.img;
+        imgEl.alt = product.alt;
+        document.getElementById("produkt-beschreibung").textContent =
+          product.beschreibung;
+        document.getElementById("produkt-preis").textContent = product.preis;
+      } else {
+        document.querySelector(".produkt-detail").innerHTML =
+          "<p>Produkt nicht gefunden.</p>";
+      }
+    </script>
+  </body>
+</html>

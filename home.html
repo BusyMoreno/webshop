@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Toy World - Startseite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Toy World</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="produkte.html">Produkte</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h2>Willkommen bei Toy World!</h2>
+        <p>Die bunte Welt der Spielsachen für jedes Alter.</p>
+      </section>
+
+      <section class="rest">
+        <h2>Unsere Bestseller</h2>
+        <p>
+          Entdecke unsere beliebtesten Produkte, die Kinderaugen zum Leuchten
+          bringen
+        </p>
+      </section>
+      <section class="produkte-grid">
+        <article>
+          <img
+            src="https://www.bea.swiss/images/product/medium/3976.jpg"
+            alt="Kinder-Baukasten"
+          />
+          <h4>Kinder-Baukasten</h4>
+          <p>Build your imagination</p>
+          <p><strong>CHF 89.00</strong></p>
+        </article>
+        <article>
+          <img
+            src="https://cdn02.plentymarkets.com/mrt54q44tptl/item/images/23381/secondPreview/Elektroauto-Kinder-Lamborghini-Autentica-rot-1.jpg"
+            alt="Electric Lamborghini"
+          />
+          <h4>Electric Car for Kids</h4>
+          <p>Drive around with your little electric car</p>
+          <p><strong>CHF 199.00</strong></p>
+        </article>
+        <article>
+          <img
+            src="https://i.ebayimg.com/images/g/0BQAAOSwW0Bf60wV/s-l1200.png"
+            alt="Playmobil Castle"
+          />
+          <h4>Playmobil Castle</h4>
+          <p>Defend your medieval stronghold with modular walls.</p>
+          <p><strong>CHF 119.00</strong></p>
+        </article>
+      </section>
+      <!-- Nach dem Bestseller-Abschnitt einfügen -->
+      <section class="newsletter">
+        <h3>Newsletter Anmeldung</h3>
+        <p>Abonniere unseren Newsletter für Neuheiten und Angebote!</p>
+        <form id="newsletter-form">
+          <input type="email" placeholder="Deine E-Mail-Adresse" required />
+          <button type="submit">Anmelden</button>
+        </form>
+        <p id="newsletter-message" style="color: green; display: none">
+          Danke für deine Anmeldung!
+        </p>
+      </section>
+
+      <script>
+        document
+          .getElementById("newsletter-form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Einfach nur Danke anzeigen (echte Anmeldung per Backend nötig)
+            document.getElementById("newsletter-message").style.display =
+              "block";
+            this.reset();
+          });
+      </script>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Toy World</p>
+    </footer>
+  </body>
+</html>

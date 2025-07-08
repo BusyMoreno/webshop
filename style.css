@@ -1,0 +1,204 @@
+/* Grundlayout */
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to bottom right, #fdf3c1, #ffe0f0);
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #ff6ec7;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero-Bereich */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #ffe0f0, #fdf3c1);
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.rest {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+/* Produktübersicht */
+.produkte-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.produkte-grid article {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.produkte-grid article:hover {
+  transform: scale(1.05);
+}
+
+.produkte-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.produkte-grid h4 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #ff6ec7;
+}
+
+.produkte-grid p {
+  margin: 0.3rem 0;
+}
+
+/* Newsletter */
+.newsletter {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #c1e7ff;
+}
+
+.newsletter form {
+  margin-top: 1rem;
+}
+
+.newsletter input {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  width: 250px;
+  max-width: 80%;
+  margin-right: 0.5rem;
+}
+
+.newsletter button {
+  padding: 0.6rem 1.2rem;
+  background-color: #ff6ec7;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background-color: #ff3fa5;
+}
+
+/* Footer */
+footer {
+  background-color: #ff6ec7;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+/* Responsives Design */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  header nav {
+    margin-top: 0.5rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Produkt-Detailseite */
+
+.produkt-detail {
+  max-width: 700px;
+  margin: 3rem auto;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.produkt-detail h2 {
+  color: #ff6ec7;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.produkt-detail img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.produkt-detail p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.produkt-detail p strong {
+  font-size: 1.4rem;
+  color: #ff6ec7;
+}
+
+/* Responsive Anpassungen */
+
+@media (max-width: 600px) {
+  .produkt-detail {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .produkt-detail h2 {
+    font-size: 2rem;
+  }
+
+  .produkt-detail p {
+    font-size: 1rem;
+  }
+}
